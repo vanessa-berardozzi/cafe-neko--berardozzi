@@ -9,7 +9,7 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 
-const pages = ['Qui sommes-nous ?', 'Nos valeurs', 'Réservez!'];
+const pages = ['Qui sommes-nous ?', 'Nos valeurs', 'Réservez !'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -26,7 +26,7 @@ function NavBar() {
 
   return (
     <AppBar
-      position="fixed"
+      position="relative"
       color="transparent"
       elevation={0}
       sx={{
@@ -48,8 +48,9 @@ function NavBar() {
               src="/images/logo-mobile.svg"
               alt="Café Neko Logo"
               sx={{
-                height: '40px',
+                height: '60px',
                 display: { xs: 'block', md: 'none' },
+                mt: 1,
               }}
             />
 
@@ -59,7 +60,7 @@ function NavBar() {
               src="/images/logo.svg"
               alt="Café Neko Logo"
               sx={{
-                height: '50px',
+                height: '90px',
                 display: { xs: 'none', md: 'block' },
               }}
             />
@@ -74,12 +75,13 @@ function NavBar() {
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    marginX: 1.5,
-                    color: page === 'Réservez!' ? '#71A894' : '#000000',
-                    fontFamily: 'Proxima Nova, sans-serif',
+                    marginX: 1.6,
+                    color: page === 'Réservez !' ? '#71A894' : '#303031',
+                    fontFamily: 'ProximaNova-Medium, sans-serif',
                     fontWeight: 500,
                     cursor: 'pointer',
                     '&:hover': { opacity: 0.8 },
+                    fontSize: { xs: '1.2rem', md: '1.2rem' },
                   }}
                 >
                   {page}
@@ -115,8 +117,8 @@ function NavBar() {
                     <Typography
                       textAlign="center"
                       sx={{
-                        fontFamily: 'Proxima Nova, sans-serif',
-                        color: page === 'Réservez!' ? '#71A894' : 'inherit',
+                        fontFamily: 'ProximaNova-medium, sans-serif',
+                        color: page === 'Réservez !' ? '#71A894' : '#303031',
                       }}
                     >
                       {page}
