@@ -63,7 +63,7 @@ export default function Hero() {
                   sx={{
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 400,
-                    lineHeight: 1.2,
+                    lineHeight: 1.4,
                     color: '#303031',
                     fontSize: { xs: '1rem', md: '1.3rem' },
                   }}
@@ -75,7 +75,7 @@ export default function Hero() {
                 <Button
                   variant="contained"
                   sx={{
-                    mt: { xs: 6, md: 5 },
+                    mt: { xs: 4, md: 4 },
                     bgcolor: '#71A894',
                     '&:hover': { bgcolor: '#5d8a77' },
                     px: 3,
