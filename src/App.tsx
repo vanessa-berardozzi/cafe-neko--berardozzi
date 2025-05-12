@@ -3,8 +3,7 @@ import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
 import AboutSection from './components/aboutSection/AboutSection';
 import OurValues from './components/OurValues/OurValues';
-
-import './App.css';
+import Reservation from './components/reservation/Reservation';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
       <Hero />
       <AboutSection />
       <OurValues />
+      <Reservation />
     </Container>
   );
 }

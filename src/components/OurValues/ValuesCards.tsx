@@ -1,40 +1,37 @@
 import React from 'react';
 import { Card, CardContent, Typography, Box, Stack } from '@mui/material';
-// Utilisation de chemins d'accès direct aux images SVG
-import coffeeIconPath from '/icons/coffee-icon.svg';
-import catIconPath from '/icons/cat-icon.svg';
-import plantIconPath from '/icons/plant-icon.svg';
+import { ValueCardProps } from '../../types/reservation';
 
-interface ValueCardProps {
-  iconSrc: string;
-  title: string;
-  description: string;
-}
+// Path to static SVG assets
+const coffeeIconPath = '/icons/coffee-icon.svg';
+const catIconPath = '/icons/cat-icon.svg';
+const plantIconPath = '/icons/plant-icon.svg';
 
+/**
+ * Individual card component displaying a company value with icon, title and description
+ */
 const ValueCard: React.FC<ValueCardProps> = ({
   iconSrc,
   title,
   description,
-}) => {
+}): JSX.Element => {
   return (
     <Card
       sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        // Hauteur adaptative selon la taille d'écran
+        // Responsive height adjustment
         height: { xs: 'auto', md: '520px' },
-        // Hauteur minimale pour assurer une bonne présentation sur mobile
         minHeight: { xs: '400px', md: '520px' },
         textAlign: 'center',
-        boxShadow: 'md',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)', // Ombre plus légère et subtile
       }}
     >
       <Box
         sx={{
           fontSize: 64,
           color: '#71A894',
-
           mt: 8,
         }}
       >
@@ -75,7 +72,11 @@ const ValueCard: React.FC<ValueCardProps> = ({
   );
 };
 
+/**
+ * Component that displays three value cards in a responsive grid
+ */
 const ValuesCards: React.FC = () => {
+  // Company values data
   const values = [
     {
       iconSrc: coffeeIconPath,
@@ -98,13 +99,21 @@ const ValuesCards: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ width: '94%', py: 2, mx: 'auto' }}>
+    <Box
+      sx={{
+        width: '100%',
+        px: 0,
+      }}
+    >
       <Stack
         direction={{ xs: 'column', md: 'row' }}
-        spacing={2}
+        spacing={{ xs: 3, md: 2 }}
         justifyContent="center"
         alignItems={{ xs: 'center', md: 'stretch' }}
         sx={{
+          mx: 'auto',
+
+          maxWidth: { xs: '100%', md: '94%' },
           '& > *': {
             flex: 1,
             maxWidth: { xs: '100%', md: '33%' },

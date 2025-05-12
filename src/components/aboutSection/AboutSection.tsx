@@ -10,6 +10,7 @@ import {
 export default function AboutSection() {
   return (
     <Box
+      id="about-section"
       component="section"
       sx={{
         py: 8,
@@ -23,10 +24,9 @@ export default function AboutSection() {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={4} alignItems="">
-          {/* Partie image (gauche sur desktop, BAS sur mobile) */}
+        <Grid container spacing={4}>
           <Grid
-            size={{ xs: 12, md: 5 }} // Réduit de 6 à 5 colonnes sur desktop
+            size={{ xs: 12, md: 5 }}
             sx={{
               order: { xs: 2, md: 1 },
               display: 'flex',

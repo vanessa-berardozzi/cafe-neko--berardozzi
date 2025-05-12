@@ -4,6 +4,7 @@ import ValuesCards from './ValuesCards';
 export default function OurValues() {
   return (
     <Box
+      id="values-section"
       component="section"
       sx={{ py: 6 }}
       mt={10}

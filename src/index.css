@@ -45,14 +45,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #71A894;
 }
 
 body {
@@ -75,19 +79,23 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #decdcd;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  hover {
+    border-color: #71A894;
+  }
+
+  &:active {
+    background-color: #71A894;
+    color: #fafafa;
+  }
 }
 
-button:hover {
-  border-color: #646cff;
-}
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -95,9 +103,7 @@ button:focus-visible {
     background-color: #F9F9F9;
   }
 
-  a:hover {
-    color: #747bff;
-  }
+
 
   button {
     background-color: #f9f9f9;

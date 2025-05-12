@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Container,
   Card,
@@ -5,23 +6,23 @@ import {
   Typography,
   Box,
   Grid,
-  Button,
+  Link,
 } from '@mui/material';
 
-export default function Hero() {
+const Hero: React.FC = (): JSX.Element => {
   return (
     <Box component="section" sx={{ py: 6 }}>
       <Container maxWidth="xl">
         <Grid container spacing={4} alignItems="center">
-          {/* Partie texte (gauche sur desktop, haut sur mobile) */}
+          {/* Left column - Text content */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Card
               elevation={0}
               sx={{
                 height: '100%',
                 bgcolor: 'transparent',
-                px: { xs: 0, md: 2 }, // Suppression du padding horizontal en mobile
-                mx: { xs: 0, md: 2 }, // Suppression de la marge horizontale en mobile
+                px: { xs: 0, md: 2 },
+                mx: { xs: 0, md: 2 },
               }}
             >
               <CardContent sx={{ textAlign: { xs: 'center', md: 'left' } }}>
@@ -34,7 +35,6 @@ export default function Hero() {
                     letterSpacing: 0.5,
                     lineHeight: 1.1,
                     mb: 4,
-
                     color: '#303031',
                     fontSize: { xs: '2.6rem', md: '3.5rem' },
                   }}
@@ -72,27 +72,34 @@ export default function Hero() {
                   accompagnée d'une dose d'amour félin.
                 </Typography>
 
-                <Button
-                  variant="contained"
+                <Link
+                  href="#reservation-section"
+                  underline="none"
                   sx={{
-                    mt: { xs: 4, md: 4 },
+                    display: 'inline-block',
+                    mt: 2,
                     bgcolor: '#71A894',
-                    '&:hover': { bgcolor: '#5d8a77' },
-                    px: 3,
+                    '&:hover': {
+                      bgcolor: '#5d8a77',
+                      color: 'white',
+                    },
+                    px: 4,
                     py: 2.5,
                     borderRadius: 8,
                     boxShadow: 0,
                     fontFamily: 'ProximaNova-Bold, sans-serif',
                     fontWeight: 700,
+                    color: 'white',
+                    textTransform: 'none',
                   }}
                 >
                   Nous contacter
-                </Button>
+                </Link>
               </CardContent>
             </Card>
           </Grid>
 
-          {/* Partie image (droite sur desktop, bas sur mobile) */}
+          {/* Right column - Hero image */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               component="img"
@@ -108,4 +115,6 @@ export default function Hero() {
       </Container>
     </Box>
   );
-}
+};
+
+export default Hero;
